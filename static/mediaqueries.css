@@ -101,3 +101,20 @@
       text-align: justify;
     }
 }
+
+@media screen and (max-width: 768px) {
+  #projects .about-containers,
+  #certifications .about-containers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  #projects .about-containers,
+  #certifications .about-containers {
+    grid-template-columns: 1fr;
+  }
+  #experience .skills-grid p {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

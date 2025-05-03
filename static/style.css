@@ -4,6 +4,8 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -144,11 +146,11 @@ a:hover {
 
 /* SECTIONS */
 section {
-  padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
-  box-sizing: border-box;
-  min-height: fit-content;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 10vw;
 }
 
 .section-container {
@@ -181,6 +183,8 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 .section__text__p2 {
@@ -191,6 +195,8 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 #socials-container {
@@ -203,7 +209,8 @@ section {
 /* ICONS */
 .icon {
   cursor: pointer;
-  height: 2rem;
+  width: 24px;
+  height: 24px;
 }
 
 /* BUTTONS */
@@ -218,12 +225,20 @@ section {
   transition: all 300ms ease;
   padding: 1rem;
   width: 8rem;
-  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.btn-color-1,
+.btn-color-1 {
+  background: #333;
+  color: #fff;
+}
+
 .btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  background: #4a90e2;
+  color: #fff;
 }
 
 .btn-color-1:hover,
@@ -281,7 +296,7 @@ section {
 .arrow {
   position: absolute;
   right: -5rem;
-  bottom: 4rem;
+  bottom: 20px;
 }
 
 .details-container {
@@ -318,6 +333,8 @@ section {
 }
 
 .experience-details-container {
+  width: 100%;
+  max-width: 1200px;
   display: contents;
   justify-content: center;
   flex-direction: row;
@@ -354,7 +371,67 @@ article .icon {
 
 /* PROJECTS SECTION */
 #projects {
-  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+#projects .about-containers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+#projects .details-container.color-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+} 
+
+#projects .details-container.color-container:hover {
+  transform: translateY(-5px);
+}
+
+#projects .article-container {
+  margin-bottom: 1rem;
+}
+
+#projects .project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#projects .experience-sub-title.project-title {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#projects .btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#projects .project-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#projects .project-btn.btn-color-2 {
+  background: #4a90e2;
+  color: #fff;
+}
+
+#projects .project-btn.btn-color-2:hover {
+  background: #357abd;
 }
 
 .color-container {
@@ -376,6 +453,89 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+/* Certifications Section */
+#certifications .experience-details-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+#certifications .about-containers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+#certifications .details-container.color-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#certifications .details-container.color-container:hover {
+  transform: translateY(-5px);
+}
+
+#certifications .article-container {
+  margin-bottom: 1rem;
+}
+
+#certifications .project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#certifications .experience-sub-title.project-title {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#certifications .btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Technical Expertise Section */
+#experience .skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#experience .skill-category-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#experience .skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#experience .skills-grid p {
+  background: #e6f0fa;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#experience .skills-grid p:hover {
+  transform: scale(1.05);
+  background: #d1e5ff;
 }
 
 /* CONTACT */
