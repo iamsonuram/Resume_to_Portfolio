@@ -17,6 +17,7 @@
           <li><a href="#experience">Experience & Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -34,6 +35,7 @@
           <li><a href="#experience" onclick="toggleMenu()">Experience & Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
+          <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
@@ -134,7 +136,7 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-placeholder.png"
+                src="{{ project.image }}"
                 alt="{{ project.title }}"
                 class="project-img"
               />
@@ -265,7 +267,7 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-placeholder.png"
+                src="{{ cert.image }}"
                 alt="{{ cert.title }}"
                 class="project-img"
               />
@@ -279,6 +281,36 @@
                 onclick="location.href='{{ cert.link }}'"
               >
                 View Certificate
+              </button>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#publications'"
+      />
+    </section>
+    <section id="publications">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Publications</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          {% for pub in publications %}
+          <div class="details-container color-container">
+            <h2 class="experience-sub-title project-title">{{ pub.title }}</h2>
+            <h4>{{ pub.publisher }} ({{ pub.year }})</h4>
+            {% if pub.link %}
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='{{ pub.link }}'"
+              >
+                View Publication
               </button>
             </div>
             {% endif %}
@@ -327,6 +359,7 @@
             <li><a href="#experience">Experience & Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#publications">Publications</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
