@@ -330,8 +330,11 @@ if st.session_state.step == "edit":
         if st.session_state.images.get("about"):
             st.image(st.session_state.images["about"], caption="Current About Picture", width=100)
 
-        # Submit button
-        st.form_submit_button("Preview Portfolio")
+        # Submit button for preview
+        if st.form_submit_button("Preview Portfolio"):
+            st.session_state.step = "preview"
+            st.write("DEBUG: Form submitted, transitioning to preview step")  # Debugging log
+            st.rerun()
 
     # Add and Delete buttons outside the form, at the bottom
     st.subheader("Manage Entries")
@@ -358,7 +361,7 @@ if st.session_state.step == "edit":
             st.session_state.data["publications"].append({"title": "", "publisher": "", "year": "", "link": ""})
             st.rerun()
 
-    # Delete buttons for education, experience, and projects
+    # Delete buttons for education, experience, projects, and certifications
     st.subheader("Delete Entries")
     if st.session_state.data["education"]:
         st.write("Delete Education")
