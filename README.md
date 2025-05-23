@@ -4,10 +4,11 @@ A Streamlit application that converts a resume (PDF or text) into a portfolio we
 
 
 ## Setup
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/iamsonuram/Resume_to_Portfolio.git
-   cd resume_to_portfolio
+**Clone the repository**:
+
+1. ``` git clone https://github.com/iamsonuram/Resume_to_Portfolio.git ```
+    
+2. ``` cd resume_to_portfolio ```
 
 
 ## Install dependencies:
